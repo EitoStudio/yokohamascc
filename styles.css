@@ -1,0 +1,830 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* ログインページのスタイル */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.login-container h1 {
+    margin-bottom: 30px;
+    color: #2196F3;
+    font-size: 2em;
+    text-align: center;
+}
+
+.login-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b0b0b0;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    background: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    color: #ffffff;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    cursor: pointer;
+    color: #b0b0b0;
+    transition: color 0.3s;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.password-toggle:hover {
+    color: #2196F3;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #1976D2;
+}
+
+/* PC版のスタイル */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #2196F3;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right #username {
+    color: #2196F3;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.header-right .logout-btn {
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-right .logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* タブバーのスタイル */
+.tab-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #b0b0b0;
+    transition: all 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #404040;
+    color: #ffffff;
+}
+
+.tab-button.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.news-container {
+    margin-top: 20px;
+}
+
+.news-item {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #2196F3;
+    color: #ffffff;
+}
+
+.news-item h3 {
+    margin: 0 0 10px 0;
+    color: #2196F3;
+}
+
+.news-date {
+    display: block;
+    margin-top: 10px;
+    color: #b0b0b0;
+    font-size: 0.9em;
+}
+
+/* ダウンロード、WebCenter、Taskページのスタイル */
+.download-container,
+.webcenter-container,
+.task-container {
+    padding: 20px;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    /* ログインページのモバイル対応 */
+    .login-container {
+        margin: 50px auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .login-container h1 {
+        font-size: 1.8em;
+    }
+
+    /* ホームページのモバイル対応 */
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .header-left h1 {
+        font-size: 1.2em;
+    }
+
+    .user-info, .tab-bar {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-button span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .side-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #1a1a1a;
+        z-index: 1000;
+        transition: 0.4s;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+    }
+
+    .side-menu.active {
+        right: 0;
+    }
+
+    .side-menu .tab-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex: 1;
+        margin-top: 60px;
+    }
+
+    .side-menu .tab-button {
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        font-size: 1.1em;
+    }
+
+    .side-menu .menu-footer {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+    }
+
+    .side-menu .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .side-menu .user-info span {
+        color: #2196F3;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .side-menu .logout-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+    }
+
+    .side-menu .logout-btn:hover {
+        background-color: #d32f2f;
+    }
+
+    .tab-content {
+        padding: 10px;
+    }
+
+    .news-item, .file-item, .link-item, .task-item {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form input, .task-form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* タブレット対応 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .tab-button {
+        padding: 12px 20px;
+    }
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2196F3;
+}
+
+/* Downloaderページのスタイル */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2d2d2d;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.file-item:hover {
+    background: #404040;
+}
+
+.file-item i {
+    margin-right: 10px;
+    color: #2196F3;
+}
+
+.file-name {
+    flex-grow: 1;
+}
+
+.download-button {
+    padding: 5px 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* WebCenterページのスタイル */
+.web-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2d2d2d;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.link-item:hover {
+    background: #404040;
+}
+
+.link-item i {
+    margin-right: 10px;
+    color: #2196F3;
+}
+
+.link-name {
+    flex-grow: 1;
+}
+
+.visit-button {
+    padding: 5px 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Taskページのスタイル */
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.task-form input {
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+.task-form input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+
+.task-form input[type="date"],
+.task-form input[type="time"] {
+    width: 150px;
+}
+
+.task-form button {
+    padding: 8px 16px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-form button:hover {
+    background-color: #1976D2;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-name {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.task-dates {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.task-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 80px;
+}
+
+.status-pending {
+    background-color: #ff9800;  /* オレンジ色 */
+    color: white;
+}
+
+.status-in-progress {
+    background-color: #2196f3;  /* 青色 */
+    color: white;
+}
+
+.status-completed {
+    background-color: #4caf50;  /* 緑色 */
+    color: white;
+}
+
+.status-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.status-button:hover {
+    background-color: #1976d2;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.complete-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.complete-button:hover {
+    background-color: #388E3C;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* SCCテキストスタイル */
+.scc-text {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #2196F3;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.search-box {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-box input:focus + i {
+    color: #2196F3;
+}
+
+.status-select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+}
+
+.status-select option {
+    background-color: #333;
+    color: white;
+    padding: 5px;
+}
+
+.status-select option[value="pending"] {
+    background-color: #ff9800;
+}
+
+.status-select option[value="in-progress"] {
+    background-color: #2196f3;
+}
+
+.status-select option[value="completed"] {
+    background-color: #4caf50;
+}
+
+/* スマホ用のメニューボタン */
+.menu-button {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-button span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* スマホ用のサイドメニュー */
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #1a1a1a;
+    z-index: 999;
+    transition: 0.4s;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu .user-info {
+    margin-top: auto;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-menu .user-info span {
+    color: #2196F3;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.side-menu .logout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.side-menu .logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .side-menu {
+        display: flex;
+    }
+
+    .tab-bar {
+        display: none;
+    }
+
+    .tab-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tab-button {
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        font-size: 1.1em;
+    }
+
+    .tab-content {
+        padding: 10px;
+    }
+
+    .news-item, .file-item, .link-item, .task-item {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form input, .task-form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        line-height: 1.2;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生徒会コンソール - Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Council Console</h1>
+        </header>
+        
+        <nav class="tab-bar">
+            <button class="tab-button" data-tab="home">ホーム</button>
+            <button class="tab-button active" data-tab="downloader">Downloader</button>
+            <button class="tab-button" data-tab="webcenter">WebCenter</button>
+            <button class="tab-button" data-tab="task">Task</button>
+        </nav>
+
+        <div class="tab-content">
+            <div id="downloader" class="tab-pane active">
+                <h2>Downloader</h2>
+                <div class="download-container">
+                    <div class="file-list">
+                        <div class="file-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span class="file-name">生徒会規約.pdf</span>
+                            <button class="download-button"><i class="fas fa-download"></i> ダウンロード</button>
+                        </div>
+                        <div class="file-item">
+                            <i class="fas fa-file-word"></i>
+                            <span class="file-name">活動報告書.docx</span>
+                            <button class="download-button"><i class="fas fa-download"></i> ダウンロード</button>
+                        </div>
+                        <div class="file-item">
+                            <i class="fas fa-file-excel"></i>
+                            <span class="file-name">予算表.xlsx</span>
+                            <button class="download-button"><i class="fas fa-download"></i> ダウンロード</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

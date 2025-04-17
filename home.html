@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横浜高校生徒会コンソール</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Firebaseのスクリプトを追加 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>横浜高校生徒会コンソール</h1>
+            </div>
+            <div class="header-right">
+                <span id="username"></span>
+                <button class="logout-btn" id="logoutBtn">ログアウト</button>
+            </div>
+        </header>
+        
+        <!-- スマホ用メニューボタン -->
+        <button class="menu-button" id="menuButton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- スマホ用サイドメニュー -->
+        <div class="side-menu" id="sideMenu">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="news">News</button>
+                <button class="tab-button" data-tab="downloader">Downloader</button>
+                <button class="tab-button" data-tab="webcenter">WebCenter</button>
+                <button class="tab-button" data-tab="task">Task</button>
+            </div>
+            <div class="menu-footer">
+                <div class="user-info">
+                    <span id="sideMenuUsername"></span>
+                    <button class="logout-btn" id="sideMenuLogoutBtn">ログアウト</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-bar">
+            <button class="tab-button active" data-tab="news">News</button>
+            <button class="tab-button" data-tab="downloader">Downloader</button>
+            <button class="tab-button" data-tab="webcenter">WebCenter</button>
+            <button class="tab-button" data-tab="task">Task</button>
+        </div>
+        
+        <div class="scc-text">SCC</div>
+        
+        <div class="tab-content active" id="news">
+            <h2>News</h2>
+            <div class="news-container" id="newsContainer">
+                <!-- ニュースがここに動的に追加されます -->
+            </div>
+        </div>
+        
+        <div class="tab-content" id="downloader">
+            <h2>Downloader</h2>
+            <div class="search-box">
+                <input type="text" id="fileSearch" placeholder="ファイルを検索...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="file-list" id="fileList">
+                <!-- ファイルがここに動的に追加されます -->
+            </div>
+        </div>
+        
+        <div class="tab-content" id="webcenter">
+            <h2>WebCenter</h2>
+            <div class="search-box">
+                <input type="text" id="linkSearch" placeholder="リンクを検索...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="web-links" id="webLinks">
+                <!-- リンクがここに動的に追加されます -->
+            </div>
+        </div>
+        
+        <div class="tab-content" id="task">
+            <h2>Task</h2>
+            <div class="task-form">
+                <input type="text" id="taskName" placeholder="タスク名を入力...">
+                <input type="date" id="finishDate">
+                <input type="time" id="finishTime">
+                <button onclick="addTask()">追加</button>
+            </div>
+            <div class="task-list" id="taskList">
+                <!-- タスクがここに動的に追加されます -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script src="news.js"></script>
+    <script src="downloader.js"></script>
+    <script src="webcenter.js"></script>
+    <script src="task.js"></script>
+</body>
+</html> 

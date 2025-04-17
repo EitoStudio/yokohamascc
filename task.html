@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生徒会コンソール - Task</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Council Console</h1>
+        </header>
+        
+        <nav class="tab-bar">
+            <button class="tab-button" data-tab="home">ホーム</button>
+            <button class="tab-button" data-tab="downloader">Downloader</button>
+            <button class="tab-button" data-tab="webcenter">WebCenter</button>
+            <button class="tab-button active" data-tab="task">Task</button>
+        </nav>
+
+        <div class="tab-content">
+            <div id="task" class="tab-pane active">
+                <h2>Task</h2>
+                <div class="task-container">
+                    <div class="task-form">
+                        <input type="text" id="newTask" placeholder="新しいタスクを入力...">
+                        <button class="add-button"><i class="fas fa-plus"></i> 追加</button>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <input type="checkbox" id="task1">
+                            <label for="task1">文化祭の準備</label>
+                            <span class="task-date">2024/04/20</span>
+                            <button class="delete-button"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task2">
+                            <label for="task2">生徒総会の資料作成</label>
+                            <span class="task-date">2024/04/25</span>
+                            <button class="delete-button"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task3">
+                            <label for="task3">新入生歓迎会の企画</label>
+                            <span class="task-date">2024/05/01</span>
+                            <button class="delete-button"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
