@@ -87,8 +87,16 @@
             <h2>Task</h2>
             <div class="task-form">
                 <input type="text" id="taskName" placeholder="タスク名を入力...">
-                <input type="date" id="finishDate">
-                <input type="time" id="finishTime">
+                <div class="date-time-inputs">
+                    <div class="date-input">
+                        <label for="finishDate">完了日:</label>
+                        <input type="date" id="finishDate">
+                    </div>
+                    <div class="time-input">
+                        <label for="finishTime">完了時間:</label>
+                        <input type="time" id="finishTime">
+                    </div>
+                </div>
                 <button onclick="addTask()">追加</button>
             </div>
             <div class="task-list" id="taskList">
